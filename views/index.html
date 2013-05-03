@@ -1,0 +1,17 @@
+{% extends 'shared/layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="test"></div>
+{% endblock %}
+
+{% block scripts%}
+<script>
+  socket.on('news', function (data) {
+    console.log(data);
+	$('.test').append("Test :" + data);
+    socket.emit('my other event', { my: 'data' });
+  });
+</script>
+{% endblock %}
