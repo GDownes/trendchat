@@ -1,4 +1,4 @@
-module.exports = function (app) {
+module.exports = function (app) { 
 	var swig = require('swig'), cons = require('consolidate');
 	
 	app.engine('.html', cons.swig);

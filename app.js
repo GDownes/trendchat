@@ -4,7 +4,6 @@ var express = require('express')
 , io = require('socket.io').listen(server)
 , path = require('path');
 
-app.use(express.static(path.join(__dirname, 'public')));
 require('./config/config')(app, express);
 
 server.listen(app.get('port'));

@@ -1,6 +1,6 @@
 module.exports = function (app, express) {
     app.configure(function() {
-        app.set('port', 8885);
+        app.set('port', process.env.PORT || 8885);
         app.use(express.logger('dev'));
         app.use(express.compress());
         app.use(express.methodOverride());
