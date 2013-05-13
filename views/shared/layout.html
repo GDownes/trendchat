@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Trend Chat - {% block title %}{% endblock %}</title>
+	<link href="css/bootstrap.css" rel="stylesheet" media="screen" />
+	<link href="css/style.css" rel="stylesheet" media="screen" />
+	<link href="css/select2.css" rel="stylesheet" media="screen" />
+	<link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen" />
+	
+	{% block head %}
+	{% endblock %}
+</head>
+<body> 
+	{% include "shared/nav.html" %}
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span3">
+				{% include "shared/locationSelect.html" %}
+				{% include "shared/trendSelect.html" %}
+			</div>
+			<div class="span9">
+				{% block content %}
+				{% endblock %}
+			</div>
+		</div>
+		{% include "shared/footer.html" %}
+	</div>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="js/jquery-1.9.1.js"></script> 
+	<script src="js/bootstrap.js"></script>
+	<script src="js/select2.js"></script>
+	<script src="js/shared.js"></script>
+	<script>
+		var socket = io.connect();
+	</script>
+	{% block scripts%}
+	{% endblock %}
+</body>
+</html>
